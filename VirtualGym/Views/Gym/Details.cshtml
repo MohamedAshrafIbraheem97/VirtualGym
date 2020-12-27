@@ -1,0 +1,52 @@
+﻿@model VirtualGym.Models.Gym
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Gym Details</h2>
+<hr />
+<div>
+    <p>
+        @Html.ActionLink("Edit", "Update", new { id = Model.Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+    <hr />
+    <dl class="dl-horizontal">
+        
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Policy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Policy)
+        </dd>
+
+    </dl>
+</div>
+

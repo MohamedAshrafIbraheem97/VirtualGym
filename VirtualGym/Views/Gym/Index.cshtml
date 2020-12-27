@@ -1,0 +1,48 @@
+﻿@model IEnumerable<VirtualGym.Models.Gym>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>
+    Available Gyms |
+    @Html.ActionLink("Add Gym", "CreateNewGym", null, new { @class = "btn btn-primary" })
+</h2>
+
+@if (!Model.Any())
+{
+    <h3>We Don't Have any Gym yet.</h3>
+}
+else
+{
+    <br/>
+    <table class="table table-striped table-hover">
+
+        <thead>
+            <tr>
+                <th scope="col">GYM Name</th>
+                <th scope="col">Phone Number</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var gym in Model)
+            {
+            <tr>
+                <td>@gym.Name</td>
+                <td>@gym.Phone</td>
+                <td>
+                    @Html.ActionLink("Detials","Details","Gym",new { id = gym.Id } , new { @class = "btn btn-success btn-sm" })
+                    @Html.ActionLink("Update", "Update","Gym", new { id = gym.Id } , new { @class = "btn btn-info btn-sm" })
+                    @Html.ActionLink("Delete", "Delete" ,"Gym",new { id = gym.Id } , new { @class = "btn btn-danger btn-sm" })
+                </td>
+                
+                
+            </tr>
+                
+            }
+        </tbody>
+    </table>
+}
+
